@@ -11,7 +11,7 @@ function Hero() {
                         Cumque Neque Quam Amet Perferendis Sed Rem Ut Tenetur Porro Praesentium.</div>
                     <div class="middleButton"> <a href=" ">Get Started </a></div>
                 </div>
-            </div>
+            </div> 
         </>
     )
 }
