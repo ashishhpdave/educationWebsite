@@ -13,7 +13,8 @@ function Header(page) {
                     <NavLink className="" to="/about">About</NavLink></div>
                     <div className="menuitem"> <NavLink href="">Courses +</NavLink>
                         <div className="sublistMain">
-                            <div className="subList"> <NavLink href="#"> Courses-1 </NavLink></div>
+                        <div className={page === '/about' ? 'subList' : 'subList'}> 
+                    <NavLink className="" to="/Courses-1">Courses-1</NavLink></div>
                             <div className="subList"><NavLink href="#"> Courses-2 </NavLink></div>
                             <div className="subList"><NavLink href="#"> Courses-3 </NavLink></div>
                         </div>

@@ -1,4 +1,4 @@
-import AboutRow from "../../../component/about-row"
+import MiddleRow from "../../../component/about-row"
 import AboutMiddleImg from "../../../component/aboutMiddleImg"
 import Footer from "../../../component/common/footer"
 import Header from "../../../component/common/header"
@@ -9,7 +9,7 @@ function AboutPage(){
                <header>
                 <Header page="home"/>
             </header>
-            <AboutRow title="About"/>
+            <MiddleRow title="About"/>
             <AboutMiddleImg />
             <Footer />
         </>

@@ -453,8 +453,8 @@
 
 
 .CoursesMiddle{
-    width: auto;
-    height:auto;
+    width: 100%;
+    height:1120px;
     margin-top: 64px;
     /* border: 1px solid red; */
 }
@@ -494,6 +494,7 @@
     height: 380px;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     /* border: 1px solid black; */
 }
 
@@ -526,7 +527,7 @@
     line-height: 35px;
 }
 
-.btn{
+.NavLink{
     display: inline-block;
     margin-top: 1rem;
     /* color: rgb(34, 75, 207); */
@@ -538,13 +539,13 @@
 }
 
 
-.box1 a{
+ .NavLink{
     text-decoration: none;
     font-family: sans-serif;
     color: #224bcf;
 }
 
-.btn:hover{
+.NavLink:hover{
     background: #224bcf;
     transition: 0.3s;
 }
