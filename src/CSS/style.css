@@ -335,14 +335,14 @@
 
 .aboutHeadRow{
     width: auto;
-    height: 140px;
+    height: 200px;
     background-image: url(/public/images/heading-bg.png);
     background-size: cover;
     border: 1px solid white;
 }
 
 .aboutHeadRow h1{
-    margin-top: 30px;
+    margin-top: 90px;
     font-size: 35px;
     font-family: sans-serif;
     margin-left: 100px;
