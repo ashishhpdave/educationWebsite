@@ -568,7 +568,7 @@
 
 .bigBoxses{
     width: auto;
-    height: 1150px;
+    height: 1140px;
     /* border: 1px solid green; */
 }
 
@@ -577,6 +577,7 @@
     height: 570px;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     /* border: 1px solid yellow; */
 }
 

@@ -9,7 +9,7 @@ function AboutPage(){
                <header>
                 <Header page="home"/>
             </header>
-            <MiddleRow title="About"/>
+            <MiddleRow ptext="About" title="About"/>
             <AboutMiddleImg />
             <Footer />
         </>
