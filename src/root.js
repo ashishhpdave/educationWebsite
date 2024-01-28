@@ -5,6 +5,7 @@ import AboutPage from './page/Home/About-us'
 import Courses1Page from './page/Home/courses-1'
 import Courses2Page from './page/Home/Courses-2'
 import Courses3Page from './page/Home/courses-3'
+import ContactUsPage from './page/Home/Contact-us'
 function Root(){
     return(
         <>
@@ -15,6 +16,7 @@ function Root(){
                     <Route path="/Courses-1" element={<Courses1Page />}/>
                     <Route path="/Courses-2" element={<Courses2Page />}/>
                     <Route path="/Courses-3" element={<Courses3Page />}/>
+                    <Route path="/Contact-us" element={<ContactUsPage />}/>
                 </Routes>
             </BrowserRouter>
         </>

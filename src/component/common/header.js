@@ -23,7 +23,8 @@ function Header(page) {
 
                     </div>
 
-                    <div className="menuitem"> <NavLink href="#">Contact</NavLink></div>
+                    <div className={page === '/Courses-3' ? 'menuitem' : 'menuitem'}> 
+                    <NavLink className="" to="/Contact-us">Contact</NavLink></div>
                 </div>
             </div>
         </>
