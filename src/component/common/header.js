@@ -17,7 +17,8 @@ function Header(page) {
                     <NavLink className="" to="/Courses-1">Courses-1</NavLink></div>
                     <div className={page === '/Courses-1' ? 'subList' : 'subList'}> 
                     <NavLink className="" to="/Courses-2">Courses-2</NavLink></div>
-                            <div className="subList"><NavLink href="#"> Courses-3 </NavLink></div>
+                    <div className={page === '/Courses-2' ? 'subList' : 'subList'}> 
+                    <NavLink className="" to="/Courses-3">Courses-3</NavLink></div>
                         </div>
 
                     </div>
