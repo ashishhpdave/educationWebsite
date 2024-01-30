@@ -37,11 +37,26 @@ function ConatctUS(){
         </label>
 
         <label>
+            <input required="" placeholder="" type="password" className="input"/>
+            <span>Password</span>
+        </label>
+
+        
+    </div>  
+    <div className="flex">
+        <label>
             <input required="" placeholder="" type="text" className="input"/>
             <span>Address</span>
         </label>
+
+        <label>
+            <input required="" placeholder="" type="password" className="input"/>
+            <span>State</span>
+        </label>
+
         
     </div>  
+        
     
     <button className="fancy" href="#">
       <span className="top-key"></span>
