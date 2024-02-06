@@ -1,74 +1,86 @@
 import { NavLink } from "react-router-dom"
-function ConatctUS(){
-    function FromSubmitOne(){
-        const getFname = document.getElementById('fname')
-        const fnameFild = getFname.value;
-    
-        const getLname = document.getElementById('lname')
-        const lnameFild = getLname.value;
-    
-        const getEmail = document.getElementById('email')
-        const emailFild = getEmail.value;
-    
-        const getPass = document.getElementById('pass')
-        const passFild = getPass.value;
-     
-        const getAddress = document.getElementById('address')
-        const addressFild = getAddress.value;
-    
-    
-        const fromData= {
-            fname : fnameFild,
-            lname : lnameFild,
-            email : emailFild,
-            password : passFild,
-            address : addressFild
-        }
-    }
-    
-        async function FromSubmit(){
-            const result = await fetch('https://educabackend.vercel.app/signup',{
-                method : "POST",
-                headers : {"Content-Type":"application/json"},
-                body : JSON.stringify(FormData)
-            })
-    
-            console.log(result)
+import axios from 'axios';
+import domain from "./domain";
+import { useState } from "react";
+function ConatctUS(){    
+       
+        const [fname, setfname] = useState('');
+        const [lname, setlname] = useState('');
+        const [email, setemail] = useState('');
+        const [password, setpassword] = useState('');
+        const [address, setaddress] = useState('');
+
+        const [load, setLoad] = useState(false)
+        const [bor, setbor] = useState(true)
+        const [showpass, setShowpass] = useState(false)
+
+        async function FromSubmit() {
+            try {
+                const data = {
+                    fname : fname,
+                    lname : lname,
+                    email: email,
+                    password: password,
+                    address :address,
+                }
+                if (fname !== '' && lname !== '' && email !== '' && password !== '' && address !== '') {
+                    setLoad(true)
+                    await axios.post(`${domain}/signup`, data)
+                    setLoad(false)
+                    setfname('');
+                    setlname('');
+                    setemail('');
+                    setpassword('');
+                    setaddress('');
+                }
+                else {
+                    setbor(false);
+                    throw new Error("Fill Form")
+                }
+            }
+            catch (err) {
+                console.log(err.message)
+            }
         }
 
     return(
         <>
-              <div class="container">
-        <div class="left">
-            <form class="form">
-                <div class="input-block">
-                    <input class="input" type="text" id="fname" required=""/>
-                    <label for="text">fname</label>
+              <div className="container">
+        <div className="left">
+            <form className="form">
+                <div className="input-block">
+                <input  onChange={function (event) { setfname(event.target.value);setbor(true) }} value={fname} className={bor ? "input" : "input"} type="text" name="u" placeholder="fname" required autoComplete="off" />
+
+                    {/* <input className="input" type="text" id="fname" required=""/> */}
                 </div>
-                <div class="input-block">
-                    <input class="input" type="text" id="lname" required=""/>
-                    <label for="text">lname</label>
+                <div className="input-block">
+                <input onChange={function (event) { setlname(event.target.value);setbor(true) }} value={lname} className={bor ? "input" : "input"} type="text"name="p" placeholder="lname" required="required" autoComplete="off" />
+
+                    {/* <input className="input" type="text" id="lname" required=""/> */}
                 </div>
-                <div class="input-block">
-                    <input class="input" type="email" id="email" required=""/>
-                    <label for="email">Email</label>  
+                <div className="input-block">
+                <input onChange={function (event) { setemail(event.target.value);setbor(true) }} value={email} className={bor ? "input" : "input"} type="email" name="u" placeholder="email" required autoComplete="off" />
+
+                    {/* <input className="input" type="email" id="email" required=""/> */}
                 </div>
-                <div class="input-block">
-                    <input class="input" type="password" id="pass" required=""/>
-                    <label for="pass">Password</label>
+                <div className="input-block">
+                <input onChange={function (event) { setpassword(event.target.value);setbor(true) }} value={password} className={bor ? "input" : "input"} type={showpass?"text":"password"} name="p" placeholder="Password" required="required" autoComplete="off" />
+
+                    {/* <input className="input" type="password" id="pass" required=""/> */}
                 </div>
-                <div class="input-block">
-                    <input class="input" type="text" id="address" required=""/>
-                    <label for="text">Address</label>
+                <div className="input-block">
+                <input onChange={function (event) { setaddress(event.target.value);setbor(true) }} value={address} className={bor ? "input" : "input"} type="text" name="u" placeholder="address" required autoComplete="off" />
+
+                    {/* <input className="input" type="text" id="address" required=""/> */}
                 </div>
-                <div class="input-block">
-<span class="forgot"><NavLink href="#">Forgot Password?</NavLink></span>
-                <button type="button" onClick={FromSubmit()}>Submit</button>
+                <div className="input-block">
+<span className="forgot"><NavLink href="#">Forgot Password?</NavLink></span>
+                <button type="button" onClick={FromSubmit}>Submit</button>
             </div>
             </form>
         </div>
-        <div class="right">
-        <div class="img">
+        <div className="right">
+        <div className="img">
     <svg width="100%" height="100%" viewBox="0 0 731.67004 550.61784" xmlns="http://www.w3.org/2000/svg">
     <path d="M0,334.13393c0,.66003,.53003,1.19,1.19006,1.19H730.48004c.65997,0,1.19-.52997,1.19-1.19,0-.65997-.53003-1.19-1.19-1.19H1.19006c-.66003,0-1.19006,.53003-1.19006,1.19Z" fill="#3f3d56"></path>
                     <polygon points="466.98463 81.60598 470.81118 130.55703 526.26809 107.39339 494.98463 57.60598 466.98463 81.60598" fill="#a0616a"></polygon>
