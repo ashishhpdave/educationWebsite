@@ -1,21 +1,56 @@
 import { NavLink } from "react-router-dom"
-
 function ConatctUS(){
+    function FromSubmitOne(){
+        const getFname = document.getElementById('fname')
+        const fnameFild = getFname.value;
+    
+        const getLname = document.getElementById('lname')
+        const lnameFild = getLname.value;
+    
+        const getEmail = document.getElementById('email')
+        const emailFild = getEmail.value;
+    
+        const getPass = document.getElementById('pass')
+        const passFild = getPass.value;
+     
+        const getAddress = document.getElementById('address')
+        const addressFild = getAddress.value;
+    
+    
+        const fromData= {
+            fname : fnameFild,
+            lname : lnameFild,
+            email : emailFild,
+            password : passFild,
+            address : addressFild
+        }
+    }
+    
+        async function FromSubmit(){
+            const result = await fetch('https://educabackend.vercel.app/signup',{
+                method : "POST",
+                headers : {"Content-Type":"application/json"},
+                body : JSON.stringify(FormData)
+            })
+    
+            console.log(result)
+        }
+
     return(
         <>
               <div class="container">
         <div class="left">
             <form class="form">
                 <div class="input-block">
-                    <input class="input" type="text" id="" required=""/>
+                    <input class="input" type="text" id="fname" required=""/>
                     <label for="text">fname</label>
                 </div>
                 <div class="input-block">
-                    <input class="input" type="text" id="" required=""/>
+                    <input class="input" type="text" id="lname" required=""/>
                     <label for="text">lname</label>
                 </div>
                 <div class="input-block">
-                    <input class="input" type="email" id="" required=""/>
+                    <input class="input" type="email" id="email" required=""/>
                     <label for="email">Email</label>  
                 </div>
                 <div class="input-block">
@@ -23,12 +58,12 @@ function ConatctUS(){
                     <label for="pass">Password</label>
                 </div>
                 <div class="input-block">
-                    <input class="input" type="text" id="" required=""/>
+                    <input class="input" type="text" id="address" required=""/>
                     <label for="text">Address</label>
                 </div>
                 <div class="input-block">
 <span class="forgot"><NavLink href="#">Forgot Password?</NavLink></span>
-                <button>Submit</button>
+                <button type="button" onClick={FromSubmit()}>Submit</button>
             </div>
             </form>
         </div>
@@ -81,69 +116,6 @@ function ConatctUS(){
         </div>
     </div>
 
-              {/* <form className="form">
-    
-    <div className="flex">
-        <label>
-            <input required="" placeholder="" type="text" className="input"/>
-            <span>first name</span>
-        </label>
-
-        <label>
-            <input required="" placeholder="" type="text" className="input"/>
-            <span>last name</span>
-        </label>
-        
-    </div>  
-            
-    <div className="flex">
-        <label>
-            <input required="" placeholder="" type="text" className="input"/>
-            <span>Class</span>
-        </label>
-
-        <label>
-            <input required="" placeholder="" type="text" className="input"/>
-            <span>Phone</span>
-        </label>
-        
-    </div>  
-
-    <div className="flex">
-        <label>
-            <input required="" placeholder="" type="text" className="input"/>
-            <span>Email</span>
-        </label>
-
-        <label>
-            <input required="" placeholder="" type="password" className="input"/>
-            <span>Password</span>
-        </label>
-
-        
-    </div>  
-    <div className="flex">
-        <label>
-            <input required="" placeholder="" type="text" className="input"/>
-            <span>Address</span>
-        </label>
-
-        <label>
-            <input required="" placeholder="" type="password" className="input"/>
-            <span>State</span>
-        </label>
-
-        
-    </div>  
-        
-    
-    <button className="fancy" href="#">
-      <span className="top-key"></span>
-      <span className="text">submit</span>
-      <span className="bottom-key-1"></span>
-      <span className="bottom-key-2"></span>
-    </button>
-</form> */}
         </>
     )
 }
