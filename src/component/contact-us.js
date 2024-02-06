@@ -10,9 +10,9 @@ function ConatctUS(){
         const [password, setpassword] = useState('');
         const [address, setaddress] = useState('');
 
-        const [load, setLoad] = useState(false)
+        // const [load, setLoad] = useState(false)
         const [bor, setbor] = useState(true)
-        const [showpass, setShowpass] = useState(false)
+        // const [showpass, setShowpass] = useState(false)
 
         async function FromSubmit() {
             try {
@@ -24,9 +24,9 @@ function ConatctUS(){
                     address :address,
                 }
                 if (fname !== '' && lname !== '' && email !== '' && password !== '' && address !== '') {
-                    setLoad(true)
+                    // setLoad(true)
                     await axios.post(`${domain}/signup`, data)
-                    setLoad(false)
+                    // setLoad(false)
                     setfname('');
                     setlname('');
                     setemail('');
@@ -64,7 +64,7 @@ function ConatctUS(){
                     {/* <input className="input" type="email" id="email" required=""/> */}
                 </div>
                 <div className="input-block">
-                <input onChange={function (event) { setpassword(event.target.value);setbor(true) }} value={password} className={bor ? "input" : "input"} type={showpass?"text":"password"} name="p" placeholder="Password" required="required" autoComplete="off" />
+                <input onChange={function (event) { setpassword(event.target.value);setbor(true) }} value={password} className={bor ? "input" : "input"} type={password?"text":"password"} name="p" placeholder="Password" required="required" autoComplete="off" />
 
                     {/* <input className="input" type="password" id="pass" required=""/> */}
                 </div>
