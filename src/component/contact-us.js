@@ -71,7 +71,7 @@ function ConatctUS(){
                 <div className="input-block">
                 <input onChange={function (event) { setaddress(event.target.value);setbor(true) }} value={address} className={bor ? "input" : "input"} type="text" name="u" placeholder="address" required autoComplete="off" />
 
-                    {/* <input className="input" type="text" id="address" required=""/> */}
+                    {/* <input className="input" type="text" id="address" required=""/> */} 
                 </div>
                 <div className="input-block">
 <span className="forgot"><NavLink href="#">Forgot Password?</NavLink></span>
